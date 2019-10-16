@@ -3,7 +3,7 @@
 }
 
 @using BestRestaurants.Models;
-@model List<BestRestaurants.Models.Item>;
+@model List<BestRestaurants.Models.Restaurant>;
 
 <h1>Best Restaurants</h1>
 
@@ -14,7 +14,7 @@
 
 @foreach (Restaurant restaurant in Model)
 {
-  <li>@Html.ActionLink($"{restaurant.Description}", "Details", new { id = restaurant.RestaurantId }) | @restaurant.Cuisine.Name</li>
+  <li>@Html.ActionLink($"{restaurant.Description}", "Details", new { id = restaurant.RestaurantId }) | @restaurant.Cuisine.Type</li>
 }
 
 <p>@Html.ActionLink("Add new restaurant", "Create")</p>

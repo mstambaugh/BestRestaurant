@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using ToDoList.Models;
+using BestRestaurants.Models;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -9,7 +9,7 @@ namespace BestRestaurants.Controllers
   {
     private readonly BestRestaurantContext _db;
 
-    public CuisinesController(ToDoListContext db)
+    public CuisinesController(BestRestaurantsContext db)
     {
       _db = db;
     }
