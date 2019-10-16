@@ -18,7 +18,9 @@
 
 @foreach (Restaurant restaurant in @Model.Restaurants)
 {
+  <li>Name: @restaurant.Name</li>
   <li>Description: @restaurant.Description</li>
+  <li>Price: @restaurant.Price</li>
 }
 </ul>
 
