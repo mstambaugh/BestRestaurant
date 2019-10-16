@@ -12,13 +12,21 @@
 {
     @Html.HiddenFor(model => model.RestaurantId)
 
+    @Html.LabelFor(model => model.Name)
+    @Html.EditorFor(model => model.Name)
+
     @Html.LabelFor(model => model.Description)
     @Html.EditorFor(model => model.Description)
+
+    @Html.LabelFor(model => model.Price)
+    @Html.EditorFor(model => model.Price)
 
     @Html.LabelFor(model => model.Cuisine)
     @Html.DropDownList("CuisineId")
 
     <input type="submit" value="Save" />
 }
+
+
 
 <p>@Html.ActionLink("Back to list", "Index")</p>

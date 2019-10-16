@@ -9,11 +9,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace BestRestaurants.Controllers
 {
-  public class RestaurantController : Controller
+  public class RestaurantsController : Controller
   {
     private readonly BestRestaurantContext _db;
 
-    public RestaurantController(BestRestaurantContext db)
+    public RestaurantsController(BestRestaurantContext db)
     {
       _db = db;
     }
@@ -23,6 +23,7 @@ namespace BestRestaurants.Controllers
         List<Restaurant> model = _db.Restaurants.Include(restaurants => restaurants.Cuisine).ToList();
         return View(model);
     }
+
 
     public ActionResult Create()
     {
@@ -43,6 +44,14 @@ namespace BestRestaurants.Controllers
         var thisRestaurant = _db.Restaurants.FirstOrDefault(restaurants => restaurants.RestaurantId == id);
         ViewBag.CuisineId = new SelectList(_db.Cuisines, "CuisineId", "Type");
         return View(thisRestaurant);
+    }
+
+    [HttpPost]
+    public ActionResult Edit(Restaurant restaurant)
+    {
+        _db.Entry(restaurant).State = EntityState.Modified;
+        _db.SaveChanges();
+        return RedirectToAction("Index");
     }
 
     public ActionResult Details(int id)
