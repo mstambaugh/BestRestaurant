@@ -8,7 +8,7 @@
 
 <h2>Cuisine Details</h2>
 <hr />
-<h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
+<h3>@Html.DisplayNameFor(model => model.Type): @Html.DisplayFor(model => model.Type)</h3>
 
 <ul>
 @if (@Model.Restaurants.Count == 0)
@@ -22,6 +22,6 @@
 }
 </ul>
 
-<p>@Html.ActionLink("Back to restaurants", "Index")</p>
+<p>@Html.ActionLink("Back to Cuisines list", "Index")</p>
 <p>@Html.ActionLink("Edit Cuisine", "Edit", new { id = Model.CuisineId })</p>
 <p>@Html.ActionLink("Delete Cuisine", "Delete", new { id = Model.CuisineId })</p>
