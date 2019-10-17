@@ -23,7 +23,7 @@ namespace BestRestaurants.Controllers
     {
         return View();
     }
-
+    
     [HttpPost]
     public ActionResult Create(Cuisine cuisine)
     {
