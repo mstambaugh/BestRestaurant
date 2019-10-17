@@ -6,11 +6,19 @@
 
 <h2>Edit</h2>
 
-<h4>Edit this cuisine: @Html.DisplayFor(model => model.Description)</h4>
+
+<h4>Edit this review Description: @Html.DisplayFor(model => model.Description)</h4>
+
 
 @using (Html.BeginForm())
 {
     @Html.HiddenFor(model => model.ReviewId)
+
+    @Html.LabelFor(model => model.Description)
+    @Html.EditorFor(model => model.Description)
+    
+    @Html.LabelFor(model => model.Date)
+    @Html.EditorFor(model => model.Date)
 
     <input type="submit" value="Save" />
 }

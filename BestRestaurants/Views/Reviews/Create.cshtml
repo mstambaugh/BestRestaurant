@@ -16,6 +16,9 @@
     @Html.LabelFor(model => model.Restaurant)
     @Html.DropDownList("RestaurantId")
 
+    @Html.LabelFor(model => model.Date)
+    @Html.EditorFor(model => model.Date, new { @type = "date" })
+
     <input type="submit" value="Add new review" class="btn btn-info" />
 }
 <p>@Html.ActionLink("Show all reviews", "Index")</p>

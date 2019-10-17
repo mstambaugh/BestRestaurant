@@ -2,6 +2,8 @@ using Microsoft.AspNetCore.Mvc;
 using BestRestaurants.Models;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace BestRestaurants.Controllers
 {
@@ -33,7 +35,7 @@ namespace BestRestaurants.Controllers
     }
     public ActionResult Details(int id)
     {
-        Cuisine thisCuisine = _db.Cuisines.FirstOrDefault(cuisines => cuisines.CuisineId == id);
+        Cuisine thisCuisine = _db.Cuisines.Include(restaurant => restaurant.Restaurants).FirstOrDefault(cuisines => cuisines.CuisineId == id);
         return View(thisCuisine);
     }
     public ActionResult Edit (int id)
